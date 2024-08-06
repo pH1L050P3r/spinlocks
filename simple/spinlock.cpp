@@ -10,7 +10,8 @@ public:
     spinlock() : _flag(0) {};
 
     void lock(){
-        while (_flag.load() || _flag.exchange(1)) {}
+        // high Coherence miss
+        while (_flag.exchange(1)) {}
     }
 
     void unlock(){
