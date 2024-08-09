@@ -23,7 +23,7 @@ public:
         uint8_t i = 0;
         while ( ticker != _serving) {
             // Don't get extra time slice to burn
-            // Extra trik for fairness
+            // Extra trick for fairness
             if(i == 8) {
                 i = 0;
                 //empirically better to use nanosleep
